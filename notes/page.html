@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="notes">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href='../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular-route/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+    <script src="service.js"></script>
+    <script src="directive.js"></script>
+
+  
+    <link rel="stylesheet" href='main.css'>
+</head>
+<body>
+    <div ng-controller="form">
+            {{foo}}
+            <textarea type="textarea" rows="4" cols="50" placeholder="insert text here" ng-model=note.text></textarea>
+            <input type="date" ng-model=note.date>
+            <input type="time" ng-model=note.hour>
+            <button ng-click=add()>add</button>
+   </div>
+   <div ng ng-controller="viewnotes" ng-repeat="n in notes">
+        <div class='note'><p>{{n.text}}</p><p>{{n.date}}  {{n.time}}</p></div>
+   </div>
+
+
+
+
+
+ </body>
+</html>
